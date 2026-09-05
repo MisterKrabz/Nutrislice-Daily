@@ -17,28 +17,7 @@ Use this format exactly:
 ### Proteins
 - Food — Meal; Station; published protein and serving when available
 
-### Vegetables
-- Food — Meal; Station
-
-### Fruits
-- Food — Meal; Station
-
-### Grains & Starches
-- Food — Meal; Station
-
-### Dairy
-- Food — Meal; Station
-
 ### Soups & Mixed Dishes
-- Food — Meal; Station
-
-### Desserts
-- Food — Meal; Station
-
-### Beverages
-- Food — Meal; Station
-
-### Condiments
 - Food — Meal; Station
 
 ### Other
