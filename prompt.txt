@@ -23,7 +23,7 @@ Use this format exactly:
 ### Other
 - Food — Meal; Station
 
-Repeat that block for every dining hall, ranked from highest to lowest value. Use `(none listed)` for empty categories. Include every published food once under its dining hall. Copy food and hall names exactly. Merge exact duplicate foods within a hall and list all applicable meals. Do not invent foods, nutrition, ingredients, prices, portions, or availability.
+Use this block only for the Four Lakes market, and only output the dinner options.
 
 Protein is 0–70 and rewards substantial entrees and distinct protein sources. Variety is 0–20 and rewards distinct meaningful choices. Produce is 0–10 and rewards actual vegetables and fruits. Total must equal those three integer scores. Sauces, condiments, garnishes, and repeated listings must not inflate scores. A hall without a published menu receives zeroes.
 
