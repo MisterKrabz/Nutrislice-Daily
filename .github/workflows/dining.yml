@@ -1,0 +1,34 @@
+name: Daily dining report
+
+on:
+  schedule:
+    - cron: '0 7 * * *'
+      timezone: America/Chicago
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  dining:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - name: Download menus, ask Gemini, and send to Discord
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-3.5-flash-lite' }}
+          DISCORD_ROLE_ID: ${{ vars.DISCORD_ROLE_ID }}
+        run: python dining.py
+      - name: Save downloaded pages and Gemini output
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: dining-${{ github.run_id }}
+          path: cloud-data/
+          retention-days: 14
